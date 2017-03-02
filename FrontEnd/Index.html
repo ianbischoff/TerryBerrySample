@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World</title>
+	<meta charset="utf-8" />
+    <script type="text/javascript" src="Scripts/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                url: "http://localhost:54386/api/helloworld", success: function (result) {
+                    var displayText = "";
+
+                    for (var i = 0; i < 10; i++) {
+                        displayText += result + ' </br> ';
+                    }
+
+                    $("#hello").html(displayText);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="hello" />
+</body>
+
+</html>
